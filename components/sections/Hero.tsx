@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="flex min-h-screen flex-col items-center justify-center px-6 text-center"
+      className="flex min-h-screen flex-col items-center justify-center px-6 pt-24 text-center"
     >
       <FadeInOnScroll>
         <Image
@@ -35,7 +35,7 @@ export default function Hero() {
       </FadeInOnScroll>
 
       <FadeInOnScroll delay={300}>
-        <p className="mt-24 max-w-2xl text-lg leading-relaxed text-slate-400">
+        <p className="mt-8 sm:mt-24 max-w-2xl text-lg leading-relaxed text-slate-400">
           {personal.intro}
         </p>
       </FadeInOnScroll>
