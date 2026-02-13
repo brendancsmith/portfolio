@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="flex min-h-screen flex-col items-center justify-center px-6 text-center"
+      className="flex flex-col items-center justify-center px-6 py-32 text-center"
     >
       <FadeInOnScroll>
         <h1 className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl">
