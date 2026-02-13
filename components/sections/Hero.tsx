@@ -23,13 +23,13 @@ export default function Hero() {
       </FadeInOnScroll>
 
       <FadeInOnScroll delay={100}>
-        <h1 className="text-5xl font-bold tracking-tight text-slate-100 sm:text-6xl">
+        <h1 className="text-3xl font-bold tracking-tight text-slate-100 sm:text-6xl">
           {personal.name}
         </h1>
       </FadeInOnScroll>
 
       <FadeInOnScroll delay={200}>
-        <p className="mt-4 text-3xl text-blue-600 font-medium">
+        <p className="mt-4 text-xl sm:text-3xl text-blue-600 font-medium">
           {personal.title}
         </p>
       </FadeInOnScroll>
