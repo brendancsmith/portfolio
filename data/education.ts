@@ -22,6 +22,10 @@ export const education: EducationEntry[] = [
     institution: "University of Nebraska – Lincoln",
     dates: "08/2012 – 05/2016",
     gpa: "3.90 / 4.00",
-    highlights: [],
+    highlights: [
+      "Student in the honors program, Jeffrey S. Raikes School of Computer Science and Business Management.",
+      "Minor in Business Management and Mathematics.",
+      "Capstone project involved working with local businesses to implement software solutions.",
+    ],
   },
 ];
