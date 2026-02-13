@@ -4,7 +4,7 @@ import DegreeCard from "@/components/ui/DegreeCard";
 
 export default function Education() {
   return (
-    <section id="education" className="bg-slate-50/30 py-20 px-6">
+    <section id="education" className="bg-slate-900/50 py-20 px-6">
       <div className="mx-auto max-w-3xl">
         <SectionHeading>Education</SectionHeading>
         <div className="grid gap-6 sm:grid-cols-2">

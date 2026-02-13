@@ -37,9 +37,9 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-slate-200/50 bg-white/80 backdrop-blur-md">
+    <nav className="fixed top-0 z-50 w-full border-b border-slate-700/50 bg-slate-950/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href="#hero" className="text-sm font-bold text-slate-900">
+        <a href="#hero" className="text-sm font-bold text-slate-100">
           BCS
         </a>
 
@@ -58,7 +58,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 text-slate-600"
+          className="md:hidden p-2 text-slate-400"
           aria-label="Toggle menu"
         >
           <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -73,7 +73,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="border-t border-slate-200/50 bg-white/95 px-6 py-4 md:hidden">
+        <div className="border-t border-slate-700/50 bg-slate-950/95 px-6 py-4 md:hidden">
           <div className="flex flex-col gap-4">
             {sections.map((s) => (
               <NavLink

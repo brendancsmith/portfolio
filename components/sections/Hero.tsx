@@ -23,7 +23,7 @@ export default function Hero() {
       </FadeInOnScroll>
 
       <FadeInOnScroll delay={100}>
-        <h1 className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl">
+        <h1 className="text-5xl font-bold tracking-tight text-slate-100 sm:text-6xl">
           {personal.name}
         </h1>
       </FadeInOnScroll>
@@ -35,7 +35,7 @@ export default function Hero() {
       </FadeInOnScroll>
 
       <FadeInOnScroll delay={300}>
-        <p className="mt-24 max-w-2xl text-lg leading-relaxed text-slate-600">
+        <p className="mt-24 max-w-2xl text-lg leading-relaxed text-slate-400">
           {personal.intro}
         </p>
       </FadeInOnScroll>

@@ -11,7 +11,7 @@ export default function Skills() {
         <div className="grid gap-8 sm:grid-cols-2">
           {skills.map((group) => (
             <FadeInOnScroll key={group.category}>
-              <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-400">
+              <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-500">
                 {group.category}
               </h3>
               <div className="flex flex-wrap gap-2">

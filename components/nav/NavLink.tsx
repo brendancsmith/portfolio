@@ -13,7 +13,7 @@ export default function NavLink({ href, label, active, onClick }: NavLinkProps) 
       href={href}
       onClick={onClick}
       className={`text-sm font-medium transition-colors ${
-        active ? "text-blue-600" : "text-slate-600 hover:text-slate-900"
+        active ? "text-blue-400" : "text-slate-400 hover:text-slate-100"
       }`}
     >
       {label}

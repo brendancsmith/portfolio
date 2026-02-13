@@ -28,7 +28,7 @@ export default function ExternalLink({ href, label, icon }: ExternalLinkProps) {
       href={href}
       target={icon === "linkedin" ? "_blank" : undefined}
       rel={icon === "linkedin" ? "noopener noreferrer" : undefined}
-      className="inline-flex items-center gap-2 text-slate-600 transition-colors hover:text-blue-600"
+      className="inline-flex items-center gap-2 text-slate-400 transition-colors hover:text-blue-400"
     >
       {icons[icon]}
       <span>{label}</span>
