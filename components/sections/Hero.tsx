@@ -59,6 +59,11 @@ export default function Hero() {
           label="LinkedIn"
           icon="linkedin"
         />
+        <ExternalLink
+          href="/resume.pdf"
+          label="Resume"
+          icon="resume"
+        />
       </FadeInOnScroll>
     </section>
   );
