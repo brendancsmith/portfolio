@@ -3,7 +3,7 @@ import FadeInOnScroll from "@/components/ui/FadeInOnScroll";
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-slate-900/50 py-20 px-6">
+    <section id="contact" className="py-20 px-6">
       <div className="mx-auto max-w-xl text-center">
         <FadeInOnScroll>
           <h2 className="text-3xl font-bold tracking-tight text-slate-100">

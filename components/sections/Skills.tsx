@@ -5,7 +5,7 @@ import FadeInOnScroll from "@/components/ui/FadeInOnScroll";
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 px-6">
+    <section id="skills" className="bg-slate-900/50 py-20 px-6">
       <div className="mx-auto max-w-3xl">
         <SectionHeading>Skills</SectionHeading>
         <div className="grid gap-8 sm:grid-cols-2">
