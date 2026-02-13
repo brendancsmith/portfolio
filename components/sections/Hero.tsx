@@ -17,7 +17,7 @@ export default function Hero() {
       </FadeInOnScroll>
 
       <FadeInOnScroll delay={100}>
-        <p className="mt-4 text-xl text-blue-600 font-medium">{personal.title}</p>
+        <p className="mt-4 text-3xl text-blue-600 font-medium">{personal.title}</p>
       </FadeInOnScroll>
 
       <FadeInOnScroll delay={200}>
