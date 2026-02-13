@@ -11,7 +11,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Brendan C. Smith | Lead Data Scientist",
   description:
-    "Data scientist and engineer building at the intersection of machine learning, cloud infrastructure, and scalable data systems.",
+    "Data scientist and engineer at the intersection of machine learning, cloud infrastructure, and scalable data systems.",
 };
 
 export default function RootLayout({
