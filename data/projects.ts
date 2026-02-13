@@ -11,7 +11,7 @@ export const projects: ProjectEntry[] = [
       "Engineered an XGBoost/LightGBM ensemble pipeline with Optuna HPO, isotonic calibration, incremental learning, and walk-forward backtesting using online training.",
       "Implemented mean-variance portfolio optimization with fractional Kelly criterion sizing and correlation-aware multi-market calibration (moneyline, spread, totals, player props).",
       "Integrated ESPN, Kalshi (RSA-authenticated), and The Odds API with Parquet caching, TTL expiration, and parallel async fetching.",
-      "Implemented automatic retraining and bet placing using the Kalshi API using the portfolio constraints.",
+      "Implemented automatic retraining and bet placing using the Kalshi API with the configured portfolio constraints.",
     ],
   },
 ];
