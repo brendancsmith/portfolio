@@ -24,4 +24,13 @@ export const projects: ProjectEntry[] = [
       "Statically exported as a single-page application and hosted on Vercel with automatic deploys from GitHub.",
     ],
   },
+  {
+    title: "Diffbot Knowledge Graph Client",
+    url: "https://github.com/brendancsmith/diffbot-kg",
+    bullets: [
+      "Developed an async Python client for the Diffbot Knowledge Graph API, published on PyPI as diffbot-kg.",
+      "Implemented rate limiting with aiolimiter and automatic retries via tenacity, with Pydantic response models for type-safe API interaction.",
+      "Tested with pytest using VCR cassettes for deterministic API replay, with CI via GitHub Actions.",
+    ],
+  },
 ];
