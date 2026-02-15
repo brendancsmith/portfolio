@@ -1,5 +1,6 @@
 export interface ProjectEntry {
   title: string;
+  url?: string;
   bullets: string[];
 }
 
@@ -12,6 +13,15 @@ export const projects: ProjectEntry[] = [
       "Implemented mean-variance portfolio optimization with fractional Kelly criterion sizing and correlation-aware multi-market calibration (moneyline, spread, totals, player props).",
       "Integrated ESPN, Kalshi (RSA-authenticated), and The Odds API with Parquet caching, TTL expiration, and parallel async fetching.",
       "Implemented automatic retraining and bet placing using the Kalshi API with the configured portfolio constraints.",
+    ],
+  },
+  {
+    title: "Portfolio Website",
+    url: "https://github.com/brendancsmith/portfolio",
+    bullets: [
+      "Built a personal portfolio site with Next.js 16, React 19, and TypeScript, styled with Tailwind CSS 4.",
+      "Separated content from UI via a typed data layer, and implemented scroll-aware navigation, fade-in animations, and inline SVG icons with zero additional runtime dependencies.",
+      "Statically exported as a single-page application and hosted on Vercel with automatic deploys from GitHub.",
     ],
   },
 ];
