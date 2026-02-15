@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="flex min-h-screen flex-col items-center justify-center px-6 pt-8 sm:pt-24 text-center"
+      className="flex min-h-screen flex-col items-center justify-center px-6 pt-8 sm:pt-0 text-center"
     >
       <FadeInOnScroll>
         <Image
