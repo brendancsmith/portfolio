@@ -60,6 +60,11 @@ export default function Hero() {
           icon="linkedin"
         />
         <ExternalLink
+          href={personal.github}
+          label="GitHub"
+          icon="github"
+        />
+        <ExternalLink
           href="/resume.pdf"
           label="Resume"
           icon="resume"
