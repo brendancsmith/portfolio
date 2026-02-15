@@ -25,6 +25,15 @@ export const projects: ProjectEntry[] = [
     ],
   },
   {
+    title: "RAG Chat Application",
+    url: "https://github.com/brendancsmith/simple-rag-chat",
+    bullets: [
+      "Built a retrieval-augmented generation chat app using LangChain, Chainlit, ChromaDB, and OpenAI, allowing users to upload PDFs and ask questions against them.",
+      "Implemented document ingestion with PDFPlumber and recursive text splitting, indexed into an ephemeral ChromaDB vector store with OpenAI embeddings.",
+      "Containerized with Docker and a devcontainer configuration, with pre-commit hooks and GitHub Actions CI.",
+    ],
+  },
+  {
     title: "Diffbot Knowledge Graph Client",
     url: "https://github.com/brendancsmith/diffbot-kg",
     bullets: [
