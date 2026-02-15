@@ -34,6 +34,14 @@ export const projects: ProjectEntry[] = [
     ],
   },
   {
+    title: "Video Subtitling Tool",
+    url: "https://github.com/brendancsmith/subtitler",
+    bullets: [
+      "Built a Python CLI that automates video subtitling by extracting audio with ffmpeg, transcribing with OpenAI Whisper, and burning SRT subtitles back into the video.",
+      "Supports batch processing of multiple video files with automatic skip for already-subtitled outputs.",
+    ],
+  },
+  {
     title: "Diffbot Knowledge Graph Client",
     url: "https://github.com/brendancsmith/diffbot-kg",
     bullets: [
