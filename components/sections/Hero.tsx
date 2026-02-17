@@ -13,7 +13,7 @@ export default function Hero() {
     >
       <FadeInOnScroll>
         <Image
-          src="/headshot.jpg"
+          src="/headshot.webp"
           alt="Brendan C. Smith"
           width={160}
           height={160}
