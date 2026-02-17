@@ -38,7 +38,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-slate-700/50 bg-slate-950/80 backdrop-blur-md">
+    <nav className="fixed top-0 z-50 w-full border-b border-slate-800/50 bg-slate-950/90 backdrop-blur-lg">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a href="#hero" className="text-sm font-bold text-slate-100">
           BCS
@@ -74,7 +74,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="border-t border-slate-700/50 bg-slate-950/95 px-6 py-4 md:hidden">
+        <div className="border-t border-slate-800/50 bg-slate-950/95 px-6 py-4 backdrop-blur-lg md:hidden">
           <div className="flex flex-col gap-4">
             {sections.map((s) => (
               <NavLink
