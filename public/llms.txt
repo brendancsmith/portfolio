@@ -1,0 +1,44 @@
+# Brendan C. Smith
+
+> Lead Data Scientist
+
+Personal portfolio site for Brendan C. Smith — a data scientist and engineer at the intersection of machine learning, cloud infrastructure, and scalable data systems.
+
+## Contact
+
+- Email: hire@brendansmith.ai
+- LinkedIn: https://linkedin.com/in/b-c-s
+- GitHub: https://github.com/brendancsmith/
+
+## Experience
+
+- **Lead Data Scientist** at Best Egg (09/2024 – 10/2025) — Credit risk modeling and ML infrastructure for consumer fintech lending. Built XGBoost models, Metaflow pipelines, and a RAG-based internal chat system.
+- **Senior Data Engineer** at Burns & McDonnell (04/2024 – 07/2024) — Databricks lakehouse ingestion/transformation with Airflow DAGs and dbt.
+- **Graduate Learning Facilitator** at University of Texas at Austin (01/2024 – 04/2024) — TA for graduate-level ML course (~465 students).
+- **Data Scientist** at Propense.ai (05/2023 – 08/2023) — Knowledge graph augmentation and B2B recommendation systems.
+- **Quant Investments & Data Science Intern** at Nexus Equities (02/2023 – 05/2023) — PyTorch computer vision for commercial real estate.
+- **Software Development Engineer – EC2 Core Platform** at Amazon Web Services (10/2018 – 01/2021) — EC2 host lifecycle services, PySpark data lake, capacity forecasting.
+- **Software Development Engineer – HDInsight** at Microsoft Azure (08/2016 – 10/2018) — Time series anomaly detection, Apache Hadoop reliability.
+- **Design Studio Software Developer** at Hudl (09/2015 – 05/2016) — CNN-based basketball highlight detection, A/B testing for ML models.
+
+## Education
+
+- **M.S. in Data Science**, University of Texas at Austin (01/2022 – 12/2024, GPA: 3.89)
+- **B.S. in Computer Science**, University of Nebraska – Lincoln (08/2012 – 05/2016, GPA: 3.90)
+
+## Projects
+
+- **Sports Betting Analysis Platform** — Quantitative trading system using XGBoost/LightGBM ensemble with portfolio optimization and fractional Kelly criterion sizing.
+- **Portfolio Website** (https://github.com/brendancsmith/portfolio) — Next.js 16, React 19, TypeScript, Tailwind CSS 4 static site.
+- **RAG Chat Application** (https://github.com/brendancsmith/simple-rag-chat) — LangChain + Chainlit + ChromaDB document Q&A system.
+- **Video Subtitling Tool** (https://github.com/brendancsmith/subtitler) — FFmpeg + OpenAI Whisper automated subtitling pipeline.
+- **Diffbot Knowledge Graph Client** (https://github.com/brendancsmith/diffbot-kg) — Async Python client for the Diffbot API with rate limiting and Pydantic models.
+
+## Skills
+
+- **Languages & Frameworks:** Python, R, SQL, PySpark, Java, TypeScript, C#, PyTorch, NumPy, Pandas, Polars, Scikit-learn
+- **Machine Learning & AI:** Computer Vision, Deep Learning, Forecasting, Metaflow, Recommendation Systems
+- **Data Analysis:** Statistical Modeling, Causal Inference, Time Series Analysis, Data Visualization
+- **Data Engineering:** ETL Pipelines, Data Warehousing, Spark, Kafka, Hive, Hadoop, Databricks
+- **Cloud Infrastructure:** Docker, Microservices, REST APIs, FastAPI, SQL & NoSQL Databases
+- **Generative AI:** LLMs, Prompt Engineering, Embeddings, RAG
