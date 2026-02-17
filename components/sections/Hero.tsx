@@ -20,12 +20,12 @@ export default function Hero() {
           width={160}
           height={160}
           priority
-          className="mx-auto mb-8 rounded-full ring-2 ring-blue-500/20 ring-offset-4 ring-offset-slate-950"
+          className="mx-auto mb-8 rounded-full ring-2 ring-blue-500/20 ring-offset-4 ring-offset-white dark:ring-offset-slate-950"
         />
       </FadeInOnScroll>
 
       <FadeInOnScroll delay={100}>
-        <h1 className="text-3xl font-bold tracking-tight text-slate-100 sm:text-6xl">
+        <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl">
           {personal.name}
         </h1>
       </FadeInOnScroll>
@@ -37,7 +37,7 @@ export default function Hero() {
       </FadeInOnScroll>
 
       <FadeInOnScroll delay={300}>
-        <p className="mt-8 sm:mt-24 max-w-2xl text-lg leading-relaxed text-slate-400">
+        <p className="mt-8 sm:mt-24 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
           {personal.intro}
         </p>
       </FadeInOnScroll>

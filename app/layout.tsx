@@ -44,14 +44,19 @@ const jsonLd = {
   sameAs: [personal.linkedin, personal.github],
 };
 
+const themeScript = `(function(){var t=localStorage.getItem('theme');if(t==='light'||(!t&&window.matchMedia('(prefers-color-scheme: light)').matches)){document.documentElement.classList.remove('dark')}})()`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased bg-slate-950 text-slate-200`}>
+    <html lang="en" className="dark">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body className={`${inter.variable} font-sans antialiased bg-white text-slate-700 dark:bg-slate-950 dark:text-slate-200`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -38,7 +38,7 @@ export default function ExternalLink({ href, label, icon }: ExternalLinkProps) {
       href={href}
       target={icon === "linkedin" || icon === "github" || icon === "resume" ? "_blank" : undefined}
       rel={icon === "linkedin" || icon === "github" || icon === "resume" ? "noopener noreferrer" : undefined}
-      className="inline-flex items-center gap-2 text-slate-400 transition-all duration-200 hover:text-blue-400 hover:-translate-y-0.5"
+      className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 transition-all duration-200 hover:text-blue-600 dark:hover:text-blue-400 hover:-translate-y-0.5"
     >
       {icons[icon]}
       <span>{label}</span>
