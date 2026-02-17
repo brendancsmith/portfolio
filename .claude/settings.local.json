@@ -7,7 +7,9 @@
       "WebSearch",
       "Bash(python3:*)",
       "Bash(npm run build:*)",
-      "Bash(npm run lint:*)"
+      "Bash(npm run lint:*)",
+      "Bash(gh repo view:*)",
+      "Bash(gh api:*)"
     ]
   }
 }
