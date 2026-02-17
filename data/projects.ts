@@ -1,52 +1,63 @@
 export interface ProjectEntry {
   title: string;
   url?: string;
+  description?: string;
   bullets: string[];
 }
 
 export const projects: ProjectEntry[] = [
   {
     title: "Sports Betting Analysis Platform",
+    description:
+      "An end-to-end quantitative trading system that treats sports betting as a financial portfolio problem — applying risk management and optimization techniques from quantitative finance to identify and size value bets across over a dozen sports.",
     bullets: [
-      "Built a plugin-based predictive modeling and portfolio optimization platform in Python covering 9 sports, using protocol-driven architecture with command factories and a sport registry for extensibility.",
-      "Engineered an XGBoost/LightGBM ensemble pipeline with Optuna HPO, isotonic calibration, incremental learning, and walk-forward backtesting using online training.",
-      "Implemented mean-variance portfolio optimization with fractional Kelly criterion sizing and correlation-aware multi-market calibration (moneyline, spread, totals, player props).",
-      "Integrated ESPN, Kalshi (RSA-authenticated), and The Odds API with Parquet caching, TTL expiration, and parallel async fetching.",
-      "Implemented automatic retraining and bet placing using the Kalshi API with the configured portfolio constraints.",
+      "Built a plugin-based platform in Python using protocol-driven architecture with command factories and a sport registry, enabling rapid onboarding of new sports and market types.",
+      "Engineered an XGBoost/LightGBM ensemble pipeline with Optuna HPO, isotonic calibration, and walk-forward backtesting to produce calibrated probability estimates that feed the portfolio optimizer.",
+      "Implemented mean-variance portfolio optimization with fractional Kelly criterion sizing and correlation-aware multi-market calibration across moneyline, spread, totals, and player prop markets.",
+      "Integrated ESPN, Kalshi (RSA-authenticated), and The Odds API with Parquet caching, TTL expiration, and parallel async fetching to maintain a continuously updated view of available odds.",
+      "Automated the full retraining-to-execution loop via the Kalshi API, enforcing position limits, bankroll allocation targets, and cross-sport correlation caps.",
     ],
   },
   {
     title: "Portfolio Website",
     url: "https://github.com/brendancsmith/portfolio",
+    description:
+      "A performant, zero-dependency portfolio site built to present work history and projects with fast load times, clean design, and a maintainable content architecture.",
     bullets: [
-      "Built a personal portfolio site with Next.js 16, React 19, and TypeScript, styled with Tailwind CSS 4.",
-      "Separated content from UI via a typed data layer, and implemented scroll-aware navigation, fade-in animations, and inline SVG icons with zero additional runtime dependencies.",
-      "Statically exported as a single-page application and hosted on Vercel with automatic deploys from GitHub.",
+      "Built with Next.js 16, React 19, and TypeScript, styled with Tailwind CSS 4 — statically exported for minimal bundle size and instant page loads.",
+      "Separated all content into typed TypeScript data files, keeping UI components free of copy and enabling quick updates without touching JSX.",
+      "Hosted on Vercel with automatic deploys from GitHub, including scroll-aware navigation, fade-in animations, and inline SVG icons with zero additional runtime dependencies.",
     ],
   },
   {
     title: "RAG Chat Application",
     url: "https://github.com/brendancsmith/simple-rag-chat",
+    description:
+      "A proof-of-concept for document-grounded conversational AI, This standalone version with Chainlit user interface lets users upload PDFs and get accurate, sourced answers.",
     bullets: [
-      "Built a retrieval-augmented generation chat app using LangChain, Chainlit, ChromaDB, and OpenAI, allowing users to upload PDFs and ask questions against them.",
-      "Implemented document ingestion with PDFPlumber and recursive text splitting, indexed into an ephemeral ChromaDB vector store with OpenAI embeddings.",
+      "Built with LangChain, Chainlit, ChromaDB, and OpenAI, demonstrating the core retrieval-augmented generation pattern used in enterprise document Q&A systems.",
+      "Implemented document ingestion with PDFPlumber and recursive text splitting tuned for retrieval quality, indexed into an ephemeral ChromaDB vector store with OpenAI embeddings.",
       "Containerized with Docker and a devcontainer configuration, with pre-commit hooks and GitHub Actions CI.",
     ],
   },
   {
     title: "Video Subtitling Tool",
     url: "https://github.com/brendancsmith/subtitler",
+    description:
+      "A practical automation tool that eliminates the manual workflow of video subtitling — extracting audio, transcribing with AI, and burning subtitles back in, all in a single command.",
     bullets: [
-      "Built a Python CLI that automates video subtitling by extracting audio with ffmpeg, transcribing with OpenAI Whisper, and burning SRT subtitles back into the video.",
-      "Supports batch processing of multiple video files with automatic skip for already-subtitled outputs.",
+      "Automates the full subtitling pipeline in a single CLI invocation: ffmpeg audio extraction, OpenAI Whisper transcription, SRT generation, and subtitle burn-in.",
+      "Processes entire directories of video files idempotently, skipping already-subtitled outputs for safe re-runs against growing media libraries.",
     ],
   },
   {
     title: "Diffbot Knowledge Graph Client",
     url: "https://github.com/brendancsmith/diffbot-kg",
+    description:
+      "An open-source Python client for the Diffbot Knowledge Graph API, built to support enterprise knowledge graph augmentation work at Propense.ai and published on PyPI for the broader developer community.",
     bullets: [
-      "Developed an async Python client for the Diffbot Knowledge Graph API, published on PyPI as diffbot-kg.",
-      "Implemented rate limiting with aiolimiter and automatic retries via tenacity, with Pydantic response models for type-safe API interaction.",
+      "Developed an async Python client for B2B data enrichment via the Diffbot Knowledge Graph API, installable as pip install diffbot-kg.",
+      "Implemented production-grade resilience patterns including token bucket rate limiting with aiolimiter and exponential backoff retries via tenacity, with Pydantic response models for type-safe API interaction.",
       "Tested with pytest using VCR cassettes for deterministic API replay, with CI via GitHub Actions.",
     ],
   },
