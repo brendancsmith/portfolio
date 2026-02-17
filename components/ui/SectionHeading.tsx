@@ -4,7 +4,7 @@ export default function SectionHeading({ children }: { children: React.ReactNode
       <h2 className="text-3xl font-bold tracking-tight text-slate-100">
         {children}
       </h2>
-      <div className="mx-auto mt-3 h-1 w-12 rounded-full bg-blue-600" />
+      <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-gradient-to-r from-blue-600 to-blue-400" />
     </div>
   );
 }

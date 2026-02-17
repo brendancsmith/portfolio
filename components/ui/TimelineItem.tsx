@@ -5,9 +5,9 @@ export default function TimelineItem({ entry }: { entry: ExperienceEntry }) {
   return (
     <FadeInOnScroll className="relative pl-8 pb-12 last:pb-0">
       {/* timeline line */}
-      <div className="absolute left-[7px] top-2 -bottom-2 w-px bg-slate-700 last:hidden" />
+      <div className="absolute left-[7px] top-2 -bottom-2 w-px bg-gradient-to-b from-blue-500/50 to-slate-700 last:hidden" />
       {/* dot */}
-      <div className="absolute left-0 top-[6px] h-[15px] w-[15px] rounded-full border-[3px] border-blue-500 bg-slate-950" />
+      <div className="absolute left-0 top-[6px] h-[15px] w-[15px] rounded-full border-[3px] border-blue-500 bg-slate-950 shadow-sm shadow-blue-500/50" />
 
       <p className="font-mono text-sm text-slate-500">{entry.dates}</p>
       <h3 className="mt-1 text-lg font-bold text-slate-100">{entry.role}</h3>

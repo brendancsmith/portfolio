@@ -3,7 +3,7 @@ import FadeInOnScroll from "./FadeInOnScroll";
 
 export default function ProjectCard({ entry }: { entry: ProjectEntry }) {
   return (
-    <FadeInOnScroll className="rounded-xl border border-slate-700 p-6">
+    <FadeInOnScroll className="rounded-xl border border-slate-700/50 bg-slate-900/30 p-6 transition-all duration-300 hover:border-blue-500/30 hover:bg-slate-900/60 hover:shadow-lg hover:shadow-blue-500/5 hover:-translate-y-0.5">
       <h3 className="text-lg font-bold text-slate-100">
         {entry.url ? (
           <a
