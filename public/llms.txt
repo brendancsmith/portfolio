@@ -12,13 +12,13 @@ Personal portfolio site for Brendan C. Smith — a data scientist and engineer a
 
 ## Experience
 
-- **Lead Data Scientist** at Best Egg (09/2024 – 10/2025) — Credit risk modeling and ML infrastructure for consumer fintech lending. Built XGBoost models, Metaflow pipelines, and a RAG-based internal chat system.
+- **Lead Data Scientist** at Best Egg (09/2024 – 10/2025) — Credit risk modeling, MLOps, and ML pipeline infrastructure for consumer fintech lending. Built XGBoost models with iterative tuning, end-to-end Metaflow MLOps pipelines, and an agentic RAG system with tool-use orchestration.
 - **Senior Data Engineer** at Burns & McDonnell (04/2024 – 07/2024) — Databricks lakehouse ingestion/transformation with Airflow DAGs and dbt.
 - **Graduate Learning Facilitator** at University of Texas at Austin (01/2024 – 04/2024) — TA for graduate-level ML course (~465 students).
 - **Data Scientist** at Propense.ai (05/2023 – 08/2023) — Knowledge graph augmentation and B2B recommendation systems.
 - **Quant Investments & Data Science Intern** at Nexus Equities (02/2023 – 05/2023) — PyTorch computer vision for commercial real estate.
-- **Software Development Engineer – EC2 Core Platform** at Amazon Web Services (10/2018 – 01/2021) — EC2 host lifecycle services, PySpark data lake, capacity forecasting.
-- **Software Development Engineer – HDInsight** at Microsoft Azure (08/2016 – 10/2018) — Time series anomaly detection, Apache Hadoop reliability.
+- **Software Development Engineer – EC2 Core Platform** at Amazon Web Services (10/2018 – 01/2021) — EC2 host lifecycle services, Python/PySpark data lake on AWS, ML-based capacity forecasting.
+- **Software Development Engineer – HDInsight** at Microsoft Azure (08/2016 – 10/2018) — Time series anomaly detection ML models deployed on Azure, Apache Hadoop reliability.
 - **Design Studio Software Developer** at Hudl (09/2015 – 05/2016) — CNN-based basketball highlight detection, A/B testing for ML models.
 
 ## Education
@@ -36,9 +36,9 @@ Personal portfolio site for Brendan C. Smith — a data scientist and engineer a
 
 ## Skills
 
-- **Languages & Frameworks:** Python, R, SQL, PySpark, Java, TypeScript, C#, PyTorch, NumPy, Pandas, Polars, Scikit-learn
-- **Machine Learning & AI:** Computer Vision, Deep Learning, Forecasting, Metaflow, Recommendation Systems
-- **Data Analysis:** Statistical Modeling, Causal Inference, Time Series Analysis, Data Visualization
+- **Languages & Frameworks:** Python, SQL, R, PySpark, Java, TypeScript, C#, PyTorch, NumPy, Pandas, Polars, Scikit-learn
+- **Machine Learning & MLOps:** Deep Learning, Computer Vision, Forecasting, Recommendation Systems, Hyperparameter Tuning, ML Pipelines, Model Monitoring, Metaflow
+- **Generative AI:** LLMs, Agentic AI, Tool Use & Function Calling, Fine-tuning, RAG, Prompt Engineering, Embeddings, LangChain
 - **Data Engineering:** ETL Pipelines, Data Warehousing, Spark, Kafka, Hive, Hadoop, Databricks
-- **Cloud Infrastructure:** Docker, Microservices, REST APIs, FastAPI, SQL & NoSQL Databases
-- **Generative AI:** LLMs, Prompt Engineering, Embeddings, RAG
+- **Cloud & Infrastructure:** AWS, Azure, Databricks, Docker, REST APIs, FastAPI, SQL & NoSQL Databases
+- **Data Analysis:** Statistical Modeling, Causal Inference, Time Series Analysis, Data Visualization
