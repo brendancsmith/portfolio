@@ -144,7 +144,7 @@ body > nav { display: none !important; }
   width: 8.5in;
   min-height: 11in;
   margin: 0 auto;
-  padding: 0.45in 0.55in 0.4in;
+  padding: 0.45in 0.55in 0.4in 0.35in;
   background: #fff;
   color: #1e293b;
   font-family: var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;
@@ -359,7 +359,7 @@ body > nav { display: none !important; }
     width: auto;
     min-height: auto;
     margin: 0;
-    padding: 0.45in 0.55in 0.4in;
+    padding: 0.45in 0.55in 0.4in 0.35in;
   }
   .resume-right {
     margin: -0.45in -0.55in -0.4in 0;
