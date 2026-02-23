@@ -18,7 +18,13 @@ npm run build
 npx -y serve "$OUT_DIR" -l "$PORT" &
 SERVER_PID=$!
 trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
-sleep 2
+# Wait for the server to be ready
+for i in $(seq 1 30); do
+  if curl -sf "http://localhost:$PORT" > /dev/null 2>&1; then
+    break
+  fi
+  sleep 0.5
+done
 
 # Generate PDFs
 "$CHROME" --headless --disable-gpu \
