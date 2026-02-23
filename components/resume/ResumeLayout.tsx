@@ -12,38 +12,37 @@ export default function ResumeLayout({ variant }: ResumeLayoutProps) {
     <div className="resume">
       <style>{resumeCSS}</style>
 
-      {/* Header */}
-      <header className="resume-header">
-        <h1 className="resume-name">{personal.name.toUpperCase()}</h1>
-        <p className="resume-title">{personal.title}</p>
-        <div className="resume-contact">
-          <span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-            </svg>
-            {personal.phone}
-          </span>
-          <span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="12" cy="12" r="4" />
-              <path d="M16 8v5a3 3 0 006 0v-1a10 10 0 10-3.92 7.94" />
-            </svg>
-            {personal.email}
-          </span>
-          <span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" />
-              <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
-            </svg>
-            linkedin.com/in/b-c-s
-          </span>
-        </div>
-      </header>
-
       {/* Two-column body */}
       <div className="resume-body">
-        {/* Left column — Experience */}
+        {/* Left column — Header + Experience */}
         <div className="resume-left">
+          <header className="resume-header">
+            <h1 className="resume-name">{personal.name.toUpperCase()}</h1>
+            <p className="resume-title">{personal.title}</p>
+            <div className="resume-contact">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                </svg>
+                {personal.phone}
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="4" />
+                  <path d="M16 8v5a3 3 0 006 0v-1a10 10 0 10-3.92 7.94" />
+                </svg>
+                {personal.email}
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" />
+                  <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
+                </svg>
+                linkedin.com/in/b-c-s
+              </span>
+            </div>
+          </header>
+
           <section>
             <h2>EXPERIENCE</h2>
             {experience.map((entry) => {
@@ -152,6 +151,8 @@ body > nav { display: none !important; }
   font-size: 9pt;
   line-height: 1.35;
   box-sizing: border-box;
+  display: flex;
+  gap: 0.35in;
 }
 
 /* ---- Header ---- */
@@ -195,18 +196,22 @@ body > nav { display: none !important; }
   color: ${ACCENT};
 }
 
-/* ---- Two-column body ---- */
+/* ---- Two-column layout ---- */
 .resume-body {
-  display: flex;
-  gap: 0.35in;
+  display: contents;
 }
 
 .resume-left {
   flex: 0 0 61%;
+  background: #fff;
 }
 
 .resume-right {
   flex: 1;
+  background: #2b3544;
+  padding: 0.3in 0.35in;
+  margin: -0.45in -0.55in -0.4in 0;
+  color: #fff;
 }
 
 /* ---- Section headers ---- */
@@ -218,6 +223,11 @@ body > nav { display: none !important; }
   border-bottom: 1.5pt solid ${ACCENT};
   padding-bottom: 3pt;
   margin: 0 0 8pt;
+}
+
+.resume-right h2 {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.25);
 }
 
 /* ---- Experience entries ---- */
@@ -281,6 +291,14 @@ body > nav { display: none !important; }
   font-size: 7pt;
 }
 
+.resume-right li {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.resume-right li::marker {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 /* ---- Education ---- */
 .resume-edu {
   margin-bottom: 10pt;
@@ -289,31 +307,31 @@ body > nav { display: none !important; }
 .resume-degree {
   font-weight: 700;
   font-size: 9.5pt;
-  color: #0f172a;
+  color: #fff;
   margin: 0;
 }
 
 .resume-institution {
   font-weight: 600;
-  color: ${ACCENT};
+  color: rgba(255, 255, 255, 0.85);
   font-size: 9pt;
   margin: 0;
 }
 
 .resume-edu-dates {
   font-size: 8.5pt;
-  color: #475569;
+  color: rgba(255, 255, 255, 0.7);
   margin: 0 0 2pt;
 }
 
 .resume-gpa {
   font-size: 8.5pt;
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.7);
   margin: 4pt 0 0;
 }
 
 .resume-gpa strong {
-  color: #0f172a;
+  color: #fff;
 }
 
 /* ---- Skills ---- */
@@ -324,13 +342,13 @@ body > nav { display: none !important; }
 .resume-skill-category {
   font-weight: 700;
   font-size: 9pt;
-  color: #0f172a;
+  color: #fff;
   margin: 0 0 1pt;
 }
 
 .resume-skill-list {
   font-size: 8.5pt;
-  color: #334155;
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.4;
   margin: 0;
 }
@@ -342,6 +360,11 @@ body > nav { display: none !important; }
     min-height: auto;
     margin: 0;
     padding: 0.45in 0.55in 0.4in;
+  }
+  .resume-right {
+    margin: -0.45in -0.55in -0.4in 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
 `;
