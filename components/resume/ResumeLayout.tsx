@@ -132,7 +132,7 @@ body, body[class] {
 body > nav { display: none !important; }
 
 @page {
-  size: letter;
+  size: 8.5in 15in;
   margin: 0;
 }
 
@@ -142,7 +142,7 @@ body > nav { display: none !important; }
 
 .resume {
   width: 8.5in;
-  min-height: 11in;
+  height: 15in;
   margin: 0 auto;
   padding: 0.45in 0.55in 0.4in 0.35in;
   background: #fff;
@@ -357,7 +357,6 @@ body > nav { display: none !important; }
 @media print {
   .resume {
     width: auto;
-    min-height: auto;
     margin: 0;
     padding: 0.45in 0.55in 0.4in 0.35in;
   }
