@@ -26,7 +26,7 @@ export const experience: ExperienceEntry[] = [
     ],
     resumeBullets: [
       "Created a next-gen customer expansion XGBoost model for the Flexible Rent Platform including alternative data, increasing Gini coefficient by 23%.",
-      "Designed and implemented a series of Metaflow flows (DAGs) to automatically train challenger models for our primary credit risk / underwriting XGBoost model.",
+      "Designed and implemented Metaflow flows (DAGs) to automatically train challenger models for our primary credit risk and underwriting XGBoost model.",
       "Trained a team of 3 other Data Scientists to contribute flows to the project.",
       "Worked on a RAG-based chat system to generate answers based on our internal documentation. Also integrated with Snowflake to run SQL queries based on questions.",
     ],
@@ -41,7 +41,7 @@ export const experience: ExperienceEntry[] = [
     bullets: [
       "Built Airflow DAGs to ingest full-load and incremental data from various SQL databases.",
       "Transformed records between medallion stages using dbt within the Databricks Medallion Architecture.",
-      "Designed a logging strategy and integrated it with Azure Monitor / Log Analytics.",
+      "Designed a logging strategy integrated with Azure Monitor / Log Analytics.",
     ],
   },
   {
@@ -64,7 +64,7 @@ export const experience: ExperienceEntry[] = [
       "Built data enrichment and recommendation capabilities for an early-stage B2B sales intelligence startup, turning third-party knowledge graphs into actionable prospecting signals.",
     bullets: [
       "Augmented enterprise knowledge graphs with internal data to cold-start a B2B recommendation system, solving the new-platform data sparsity problem for market insights.",
-      "Identified patterns in sales gaps by analyzing client and sales history data. Presented actionable insights to clients, securing 5 initial contracts for product launch.",
+      "Identified patterns in sales gaps by analyzing client and sales history data. Presented actionable insights to clients, securing 5 initial contracts at launch.",
     ],
   },
   {
@@ -93,10 +93,10 @@ export const experience: ExperienceEntry[] = [
     ],
     resumeBullets: [
       "Owned and operated two critical services: one to drain customer instances from unhealthy EC2 hosts, and another to proactively recycle older hosts for re-provisioning. Identified and resolved deadlock conditions, resulting in a $300k/month reduction in 'unsellable' rate.",
-      "Built a scalable and secure data lake to centralize previously siloed EC2 internal data.",
+      "Built a scalable data lake to centralize previously siloed EC2 internal data sources.",
       "Used PySpark to ingest real-time data from various AWS data stores such as AWS DynamoDB, RDS (MySQL), S3, and Amazon Athena.",
       "Deployed ETL pipelines using AWS Glue Jobs, Crawlers, and VPC Elastic Interfaces to extract cross-regional data from 300+ internal AWS production service accounts.",
-      "Created stored procedures and QuickSight analytics dashboards, significantly increasing the velocity of insights and business decisions for the TPM team and stakeholders.",
+      "Created stored procedures and QuickSight dashboards, increasing the velocity of insights and business decisions for TPM stakeholders.",
       "Implemented a capacity forecasting model and integrated it into the proactive re-provisioning workflow, increasing host turnover rate by up to 18% per region.",
     ],
   },
@@ -110,7 +110,7 @@ export const experience: ExperienceEntry[] = [
     bullets: [
       "Served as cross-org liaison for root cause analysis of regressions in Apache Hadoop ecosystem products (Spark, Kafka, etc.), coordinating fixes with upstream Apache engineers.",
       "Proposed, designed, and deployed time series anomaly detection ML models on Azure, improving alarm triggers and identifying cluster configurations with high customer impact. Reduced average TTD by ~55% and TTR by ~20%.",
-      "Joined a small v-team which refactored the control plane of HDInsight to support the creation of flexible cluster shapes. Closed the feature gap with our primary competitors while increasing service reliability KPIs and decreasing COGS.",
+      "Joined a small v-team to refactor the HDInsight control plane, enabling flexible cluster shapes. Closed the feature gap with competitors while increasing service reliability KPIs and reducing COGS.",
     ],
   },
   {
