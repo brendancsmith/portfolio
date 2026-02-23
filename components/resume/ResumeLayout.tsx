@@ -209,7 +209,7 @@ body > nav { display: none !important; }
 .resume-right {
   flex: 1;
   background: #2b3544;
-  padding: 1.45in 0.35in 0.3in;
+  padding: 1.48in 0.35in 0.3in;
   margin: -0.45in -0.55in -0.4in 0;
   color: #fff;
 }
