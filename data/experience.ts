@@ -5,6 +5,7 @@ export interface ExperienceEntry {
   dates: string;
   description?: string;
   bullets: string[];
+  resumeBullets?: string[];
 }
 
 export const experience: ExperienceEntry[] = [
@@ -22,6 +23,12 @@ export const experience: ExperienceEntry[] = [
       "Designed end-to-end MLOps pipelines in Metaflow to automate the challenger model lifecycle — feature engineering, hyperparameter tuning, validation, and deployment — for the primary credit risk underwriting model, accelerating experiment-to-production velocity.",
       "Trained a team of 3 other Data Scientists to contribute flows to the project.",
       "Built an agentic RAG system with tool-use orchestration over internal documentation, including a Snowflake SQL integration for natural-language data queries, reducing time-to-insight for non-technical stakeholders.",
+    ],
+    resumeBullets: [
+      "Created a next-gen customer expansion XGBoost model for the Flexible Rent Platform including alternative data, increasing Gini coefficient by 23%.",
+      "Designed and implemented a series of Metaflow flows (DAGs) to automatically train challenger models for our primary credit risk / underwriting XGBoost model.",
+      "Trained a team of 3 other Data Scientists to contribute flows to the project.",
+      "Worked on a RAG-based chat system to generate answers based on our internal documentation. Also integrated with Snowflake to run SQL queries based on questions.",
     ],
   },
   {
@@ -84,6 +91,14 @@ export const experience: ExperienceEntry[] = [
       "Deployed AWS Glue ETL pipelines to extract cross-regional data from 300+ internal production accounts and surfaced insights through QuickSight dashboards for TPM stakeholders.",
       "Implemented and deployed a capacity forecasting ML model integrated into the proactive host re-provisioning workflow, increasing turnover rate by up to 18% per region.",
     ],
+    resumeBullets: [
+      "Owned and operated two critical services: one to drain customer instances from unhealthy EC2 hosts, and another to proactively recycle older hosts for re-provisioning. Identified and resolved deadlock conditions, resulting in a $300k/month reduction in 'unsellable' rate.",
+      "Built a scalable and secure data lake to centralize previously siloed EC2 internal data.",
+      "Used PySpark to ingest real-time data from various AWS data stores such as AWS DynamoDB, RDS (MySQL), S3, and Amazon Athena.",
+      "Deployed ETL pipelines using AWS Glue Jobs, Crawlers, and VPC Elastic Interfaces to extract cross-regional data from 300+ internal AWS production service accounts.",
+      "Created stored procedures and QuickSight analytics dashboards, significantly increasing the velocity of insights and business decisions for the TPM team and stakeholders.",
+      "Implemented a capacity forecasting model and integrated it into the proactive re-provisioning workflow, increasing host turnover rate by up to 18% per region.",
+    ],
   },
   {
     company: "Microsoft Azure",
@@ -108,6 +123,11 @@ export const experience: ExperienceEntry[] = [
     bullets: [
       "Developed a temporal convolutional neural network to automatically detect basketball highlights from user-uploaded video.",
       "Ran continuous A/B experiments measuring engagement, bounce rate, and stickiness to iterate on model effectiveness, achieving significant growth in active users (DAU/WAU).",
+    ],
+    resumeBullets: [
+      "Collaborated with a team of data scientists to develop a temporal convolutional neural network which automatically detected basketball highlights from user-uploaded video.",
+      "Conducted continuous A/B testing to collect user metrics (engagement, bounce rate, stickiness, and view count) to iterate on model effectiveness.",
+      "Assessed model launch success through user engagement metrics and presented regular reports to stakeholders. Achieved significant growth in active users (DAU / WAU).",
     ],
   },
 ];
