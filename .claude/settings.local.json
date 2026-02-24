@@ -9,7 +9,9 @@
       "Bash(npm run build:*)",
       "Bash(npm run lint:*)",
       "Bash(gh repo view:*)",
-      "Bash(gh api:*)"
+      "Bash(gh api:*)",
+      "Bash(npm run build:resume:*)",
+      "Bash(open:*)"
     ]
   }
 }
