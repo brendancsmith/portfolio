@@ -52,17 +52,6 @@ export const projects: ProjectEntry[] = [
     ],
   },
   {
-    title: "Flocking Simulation",
-    url: "https://github.com/brendancsmith/flocking",
-    description:
-      "An interactive boids simulation that demonstrates how complex, lifelike flocking behavior emerges from simple local rules applied to individual agents with no central coordination.",
-    bullets: [
-      "Implemented the classic boids algorithm in Python with pygame — separation, alignment, and cohesion rules produce emergent flocking behavior in real time at 60 FPS.",
-      "Added interactive mouse forces (attract/repel), runtime-adjustable speed and perception radius, and spawning controls for hands-on exploration of parameter effects.",
-      "Architected with clean dataclass models and strict mypy typing, managed with uv and linted with ruff.",
-    ],
-  },
-  {
     title: "Diffbot Knowledge Graph Client",
     url: "https://github.com/brendancsmith/diffbot-kg",
     description:
@@ -71,6 +60,17 @@ export const projects: ProjectEntry[] = [
       "Developed an async Python client for B2B data enrichment via the Diffbot Knowledge Graph API, installable as pip install diffbot-kg.",
       "Implemented production-grade resilience patterns including token bucket rate limiting with aiolimiter and exponential backoff retries via tenacity, with Pydantic response models for type-safe API interaction.",
       "Tested with pytest using VCR cassettes for deterministic API replay, with CI via GitHub Actions.",
+    ],
+  },
+  {
+    title: "Flocking Simulation",
+    url: "https://github.com/brendancsmith/flocking",
+    description:
+      "An interactive boids simulation that demonstrates how complex, lifelike flocking behavior emerges from simple local rules applied to individual agents with no central coordination.",
+    bullets: [
+      "Implemented the classic boids algorithm in Python with pygame — separation, alignment, and cohesion rules produce emergent flocking behavior in real time at 60 FPS.",
+      "Added interactive mouse forces (attract/repel), runtime-adjustable speed and perception radius, and spawning controls for hands-on exploration of parameter effects.",
+      "Architected with clean dataclass models and strict mypy typing, managed with uv and linted with ruff.",
     ],
   },
 ];
