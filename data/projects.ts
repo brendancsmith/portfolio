@@ -31,6 +31,17 @@ export const projects: ProjectEntry[] = [
     ],
   },
   {
+    title: "Panel of Experts",
+    url: "https://github.com/brendancsmith/panel-of-experts",
+    description:
+      "A chatbot that improves LLM answer quality by querying OpenAI multiple times in parallel and synthesizing a consensus response — a simple implementation of self-consistency sampling (Wang et al. 2022).",
+    bullets: [
+      "Queries OpenAI in parallel using LangChain's RunnableParallel and abatch, then feeds all expert responses into a consensus chain that reasons across them to produce a more reliable final answer.",
+      "Demonstrates emergent problem-solving: the consensus moderator can solve reasoning puzzles that none of the individual expert responses answer correctly, by evaluating and combining multiple approaches.",
+      "Built with LangChain, Chainlit, and OpenAI, with conversation memory, prompt templating, and streaming output.",
+    ],
+  },
+  {
     title: "RAG Chat Application",
     url: "https://github.com/brendancsmith/simple-rag-chat",
     description:
