@@ -7,7 +7,7 @@ export interface ProjectEntry {
 
 export const projects: ProjectEntry[] = [
   {
-    title: "Sports Betting Analysis Platform",
+    title: "Sports Bets Recommendation Platform",
     url: "https://b2-sports.com",
     description:
       "An end-to-end quantitative trading system that treats sports betting as a financial portfolio problem — applying risk management and optimization techniques from quantitative finance to identify and size value bets across over a dozen sports.",
