@@ -28,7 +28,7 @@ Personal portfolio site for Brendan C. Smith — a data scientist and engineer a
 
 ## Projects
 
-- **Sports Betting Analysis Platform** — Quantitative trading system using XGBoost/LightGBM ensemble with portfolio optimization and fractional Kelly criterion sizing.
+- **Sports Bets Recommendation Platform** — Quantitative trading system using XGBoost/LightGBM ensemble with portfolio optimization and fractional Kelly criterion sizing.
 - **Portfolio Website** (https://github.com/brendancsmith/portfolio) — Next.js 16, React 19, TypeScript, Tailwind CSS 4 static site.
 - **RAG Chat Application** (https://github.com/brendancsmith/simple-rag-chat) — LangChain + Chainlit + ChromaDB document Q&A system.
 - **Video Subtitling Tool** (https://github.com/brendancsmith/subtitler) — FFmpeg + OpenAI Whisper automated subtitling pipeline.
