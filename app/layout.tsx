@@ -44,7 +44,7 @@ const jsonLd = {
   sameAs: [personal.linkedin, personal.github],
 };
 
-const themeScript = `(function(){var t=localStorage.getItem('theme');if(t==='light'||(!t&&window.matchMedia('(prefers-color-scheme: light)').matches)){document.documentElement.classList.remove('dark')}})()`;
+const themeScript = `(function(){if(localStorage.getItem('theme')==='light'){document.documentElement.classList.remove('dark')}})()`;
 
 export default function RootLayout({
   children,
