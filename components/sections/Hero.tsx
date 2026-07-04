@@ -42,35 +42,12 @@ export default function Hero() {
         </p>
       </FadeInOnScroll>
 
-      <FadeInOnScroll
-        delay={400}
-        className="mt-8 flex flex-wrap items-center justify-center gap-6"
-      >
-        <ExternalLink
-          href={`mailto:${personal.email}`}
-          label={personal.email}
-          icon="email"
-        />
-        <ExternalLink
-          href={`tel:${personal.phone}`}
-          label={personal.phone}
-          icon="phone"
-        />
-        <ExternalLink
-          href={personal.linkedin}
-          label="LinkedIn"
-          icon="linkedin"
-        />
-        <ExternalLink
-          href={personal.github}
-          label="GitHub"
-          icon="github"
-        />
-        <ExternalLink
-          href="/resume.pdf"
-          label="Resume"
-          icon="resume"
-        />
+      <FadeInOnScroll delay={400} className="mt-8 flex flex-wrap items-center justify-center gap-6">
+        <ExternalLink href={`mailto:${personal.email}`} label={personal.email} icon="email" />
+        <ExternalLink href={`tel:${personal.phone}`} label={personal.phone} icon="phone" />
+        <ExternalLink href={personal.linkedin} label="LinkedIn" icon="linkedin" />
+        <ExternalLink href={personal.github} label="GitHub" icon="github" />
+        <ExternalLink href="/resume.pdf" label="Resume" icon="resume" />
       </FadeInOnScroll>
     </section>
   );

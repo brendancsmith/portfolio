@@ -53,9 +53,7 @@ export default function ResumeLayout({ variant }: ResumeLayoutProps) {
             <h2>EXPERIENCE</h2>
             {experience.map((entry) => {
               const bullets =
-                variant === "standard"
-                  ? entry.resumeBullets ?? entry.bullets
-                  : entry.bullets;
+                variant === "standard" ? (entry.resumeBullets ?? entry.bullets) : entry.bullets;
 
               return (
                 <div key={entry.company} className="resume-entry">
@@ -109,9 +107,7 @@ export default function ResumeLayout({ variant }: ResumeLayoutProps) {
             {skills.map((cat) => (
               <div key={cat.category} className="resume-skill-group">
                 <p className="resume-skill-category">{cat.category}</p>
-                <p className="resume-skill-list">
-                  {cat.skills.join(" \u00b7 ")}
-                </p>
+                <p className="resume-skill-list">{cat.skills.join(" \u00b7 ")}</p>
               </div>
             ))}
           </section>

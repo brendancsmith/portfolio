@@ -8,7 +8,11 @@ interface FadeInOnScrollProps {
   delay?: number;
 }
 
-export default function FadeInOnScroll({ children, className = "", delay = 0 }: FadeInOnScrollProps) {
+export default function FadeInOnScroll({
+  children,
+  className = "",
+  delay = 0,
+}: FadeInOnScrollProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -23,7 +27,7 @@ export default function FadeInOnScroll({ children, className = "", delay = 0 }: 
           observer.unobserve(el);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     observer.observe(el);
