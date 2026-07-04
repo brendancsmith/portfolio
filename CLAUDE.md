@@ -10,7 +10,9 @@ Personal portfolio site for Brendan C. Smith — a static Next.js site deployed 
 
 - `npm run dev` — Start dev server (localhost:3000)
 - `npm run build` — Static export to `out/`
-- `npm run lint` — ESLint
+- `npm run lint` — ESLint (linting)
+- `npm run format` — Biome (write formatting changes in place)
+- `npm run format:check` — Biome (verify formatting; used by CI, non-zero exit on drift)
 - `npm run build:resume` — Build site, spin up temp server on :3999, use Chrome headless to generate `public/resume.pdf` and `public/resume-extended.pdf`
 
 ## Architecture
@@ -24,6 +26,15 @@ Personal portfolio site for Brendan C. Smith — a static Next.js site deployed 
 **Styling**: Tailwind CSS 4 via PostCSS for all components except the resume. Dark mode via `.dark` class on `<html>`, persisted to localStorage.
 
 **Scroll navigation**: Navbar uses IntersectionObserver to highlight the active section as the user scrolls. `FadeInOnScroll` component provides entrance animations.
+
+## Linting & formatting
+
+Two tools with a strict division of labor — they do not overlap:
+
+- **ESLint** (`eslint-config-next`) owns **linting**. It contributes the Next.js-aware `core-web-vitals` and TypeScript rule sets (e.g. flagging raw `<img>`, sync scripts) that Biome does not provide.
+- **Biome** owns **formatting** only. Its config (`biome.json`) sets `linter.enabled: false` and `assist.enabled: false`, so Biome never lints or sorts imports — it just formats. Style: 2-space indent, double quotes, semicolons, 100-char width. `css.parser.tailwindDirectives` is enabled so Tailwind v4 at-rules in `globals.css` parse.
+
+The husky `pre-commit` hook runs `lint-staged`, which applies `eslint --fix` then `biome format --write` to staged files. CI runs both `npm run lint` and `npm run format:check`.
 
 ## Key Patterns
 
