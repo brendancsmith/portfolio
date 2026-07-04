@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   lint:
-    name: Lint
+    name: Lint & format
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,3 +32,6 @@ jobs:
 
       - name: Run ESLint
         run: npm run lint
+
+      - name: Check formatting (Biome)
+        run: npm run format:check
