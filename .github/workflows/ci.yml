@@ -34,7 +34,9 @@ jobs:
         run: npm run lint
 
       - name: Type check
+        if: ${{ !cancelled() }}
         run: npm run typecheck
 
       - name: Check formatting (Biome)
+        if: ${{ !cancelled() }}
         run: npm run format:check
