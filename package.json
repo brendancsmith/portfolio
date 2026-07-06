@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "format": "biome format --write .",
     "format:check": "biome format .",
-    "build:resume": "bash scripts/build-resume.sh",
+    "build:resume": "next build && node scripts/generate-resume-pdfs.mjs --out-dir out",
+    "preview": "npm run build:resume && node scripts/static-server.mjs out 3000",
     "test:smoke": "node scripts/smoke-test.mjs",
     "prepare": "husky"
   },
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.2",
+    "@sparticuz/chromium": "^149.0.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -32,7 +34,8 @@
     "eslint-config-next": "16.2.6",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.8",
-    "serve": "^14.2.6",
+    "puppeteer-core": "^25.3.0",
+    "serve-handler": "^6.1.7",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

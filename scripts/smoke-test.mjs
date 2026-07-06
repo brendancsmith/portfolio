@@ -1,16 +1,14 @@
 #!/usr/bin/env node
-// Smoke-test the static export: serve out/ and assert each route returns HTTP
-// 200 with its expected <title>. Run `npm run build` first to generate out/.
+// Smoke-test the static export: serve out/ the way Vercel does and assert each
+// route returns HTTP 200 with its expected <title>. Run `npm run build` first.
 
-import { spawn } from "node:child_process";
 import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { startStaticServer } from "./static-server.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, "out");
-const port = Number(process.env.SMOKE_PORT ?? 4321);
-const base = `http://127.0.0.1:${port}`;
 
 // Each route must return 200 and contain its unique <title>, which confirms the
 // correct page rendered — not just that some page responded.
@@ -20,54 +18,20 @@ const routes = [
   { path: "/resume-extended", title: "Brendan C. Smith | Resume (Extended)" },
 ];
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
 if (!existsSync(join(outDir, "index.html"))) {
   console.error("out/index.html not found — run `npm run build` before the smoke test.");
   process.exit(1);
 }
 
-// Serve without --single so missing routes 404 instead of falling back to
-// index.html, which would hide a genuinely broken route.
-const server = spawn(
-  join(root, "node_modules", ".bin", "serve"),
-  [outDir, "-l", String(port), "--no-clipboard", "--no-port-switching"],
-  { detached: true, stdio: "ignore" },
-);
-server.on("error", (err) => {
-  console.error(`Failed to start static server: ${err.message}`);
-  process.exit(1);
-});
+// Clean URLs + real 404s (no index fallback), so a genuinely broken route fails
+// instead of silently serving index.html.
+const { origin, close } = await startStaticServer(outDir, { cleanUrls: true });
 
-// Kill the whole process group so no orphan listener survives.
-const stopServer = () => {
-  try {
-    process.kill(-server.pid, "SIGTERM");
-  } catch {
-    // Server already exited.
-  }
-};
-
-async function waitForReady() {
-  for (let attempt = 0; attempt < 40; attempt++) {
-    try {
-      const res = await fetch(base, { signal: AbortSignal.timeout(1000) });
-      if (res.ok) return;
-    } catch {
-      // Server not accepting connections yet.
-    }
-    await sleep(500);
-  }
-  throw new Error(`Server did not become ready at ${base}`);
-}
-
-async function run() {
-  await waitForReady();
-
+try {
   const failures = [];
   for (const { path, title } of routes) {
     try {
-      const res = await fetch(`${base}${path}`, { signal: AbortSignal.timeout(5000) });
+      const res = await fetch(`${origin}${path}`, { signal: AbortSignal.timeout(5000) });
       const body = await res.text();
       if (res.status !== 200) {
         failures.push(`${path} → HTTP ${res.status} (expected 200)`);
@@ -87,10 +51,6 @@ async function run() {
   } else {
     console.log(`\nSmoke test passed: ${routes.length} routes OK.`);
   }
-}
-
-try {
-  await run();
 } finally {
-  stopServer();
+  await close();
 }
