@@ -14,6 +14,7 @@
     "format": "biome format --write .",
     "format:check": "biome format .",
     "build:resume": "bash scripts/build-resume.sh",
+    "test:smoke": "node scripts/smoke-test.mjs",
     "prepare": "husky"
   },
   "dependencies": {
@@ -31,6 +32,7 @@
     "eslint-config-next": "16.2.6",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.8",
+    "serve": "^14.2.6",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
@@ -38,7 +40,7 @@
     "postcss": "^8.5.10"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{js,jsx,mjs,cjs,ts,tsx}": [
       "eslint --fix",
       "biome format --write --no-errors-on-unmatched"
     ],
