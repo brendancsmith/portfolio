@@ -11,7 +11,10 @@ export default function DegreeCard({ entry }: { entry: EducationEntry }) {
       {entry.highlights.length > 0 && (
         <ul className="mt-3 space-y-2">
           {entry.highlights.map((h, i) => (
-            <li key={i} className="relative pl-4 text-sm text-slate-500 dark:text-slate-400 leading-relaxed before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-slate-300 dark:before:bg-slate-600">
+            <li
+              key={i}
+              className="relative pl-4 text-sm text-slate-500 dark:text-slate-400 leading-relaxed before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-slate-300 dark:before:bg-slate-600"
+            >
               {h}
             </li>
           ))}

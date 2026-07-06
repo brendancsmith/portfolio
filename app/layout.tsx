@@ -56,7 +56,9 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className={`${inter.variable} font-sans antialiased bg-white text-slate-700 dark:bg-slate-950 dark:text-slate-200`}>
+      <body
+        className={`${inter.variable} font-sans antialiased bg-white text-slate-700 dark:bg-slate-950 dark:text-slate-200`}
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
