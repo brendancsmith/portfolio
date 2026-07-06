@@ -8,14 +8,19 @@ Personal portfolio site for Brendan C. Smith — a static Next.js site deployed 
 
 ## Commands
 
-- `npm run dev` — Start dev server (localhost:3000)
-- `npm run build` — Static export to `out/`
-- `npm run lint` — ESLint (linting)
+Two workflows cover almost everything:
+
+- **`npm run dev`** — everyday iteration. Live-reloading site at localhost:3000, including the `/resume` and `/resume-extended` **pages** — edit content/layout and see it instantly. Does **not** serve the downloadable PDF or use clean URLs; those exist only in a build.
+- **`npm run preview`** — see exactly what Vercel ships. Builds the site and PDFs, then serves `out/` at localhost:3000 with clean URLs and the working `/resume.pdf` download link. Use before shipping, or whenever you touch the resume PDF/download.
+
+Supporting commands:
+
+- `npm run build` — static export to `out/` (no PDFs)
+- `npm run build:resume` — `next build`, then render `/resume` and `/resume-extended` to `out/resume.pdf` and `out/resume-extended.pdf` with headless Chromium (what `preview` builds, and what Vercel runs on deploy)
+- `npm run lint` — ESLint
 - `npm run typecheck` — TypeScript type-check (`tsc --noEmit`)
-- `npm run format` — Biome (write formatting changes in place)
-- `npm run format:check` — Biome (verify formatting; used by CI, non-zero exit on drift)
-- `npm run build:resume` — Build site, spin up temp server on :3999, use Chrome headless to generate `public/resume.pdf` and `public/resume-extended.pdf`
-- `npm run test:smoke` — Serve `out/` with `serve` and assert each route returns HTTP 200 with its expected `<title>` (run `npm run build` first)
+- `npm run format` / `npm run format:check` — Biome (write in place / verify; CI uses the check)
+- `npm run test:smoke` — serve `out/` and assert `/`, `/resume`, `/resume-extended` each return HTTP 200 with the expected `<title>` (run `npm run build` first)
 
 ## Architecture
 
@@ -23,7 +28,7 @@ Personal portfolio site for Brendan C. Smith — a static Next.js site deployed 
 
 **Content is data-driven**: All portfolio content lives in typed TypeScript files under `data/` (personal.ts, experience.ts, education.ts, projects.ts, skills.ts). Components read from these — no hardcoded copy in JSX.
 
-**Resume system**: Two resume variants (standard and extended) share a single `components/resume/ResumeLayout.tsx` component. The standard variant uses `resumeBullets` (condensed) while extended uses full `bullets`. Resume styling uses raw inline CSS strings (not Tailwind) for precise print control at 8.5" x 15" page size.
+**Resume system**: Two resume variants (standard and extended) share a single `components/resume/ResumeLayout.tsx` component. The standard variant uses `resumeBullets` (condensed) while extended uses full `bullets`. Resume styling uses raw inline CSS strings (not Tailwind) for precise print control at 8.5" x 15" page size. The downloadable PDFs are build artifacts (not committed): `scripts/generate-resume-pdfs.mjs` serves the static export and prints those routes to `out/resume.pdf` / `out/resume-extended.pdf`, using the system Chrome locally and `@sparticuz/chromium` in the Vercel build container. Vercel regenerates them on every deploy via the `buildCommand` in `vercel.json`. The generator, the smoke test, and `npm run preview` all serve `out/` through one shared `scripts/static-server.mjs` helper (an in-process wrapper over `serve-handler`).
 
 **Styling**: Tailwind CSS 4 via PostCSS for all components except the resume. Dark mode via `.dark` class on `<html>`, persisted to localStorage.
 
@@ -51,4 +56,4 @@ Actions are pinned to major tags (`actions/checkout@v7`, `actions/setup-node@v6`
 
 - Path alias: `@/*` maps to project root (e.g., `@/data/experience`)
 - Theme: default is dark mode; toggle in ThemeToggle.tsx writes to localStorage and toggles `.dark` class
-- Resume PDFs must be regenerated with `npm run build:resume` after any data or layout changes
+- The resume download (`/resume.pdf`, linked from the Hero) is a build artifact in `out/`, regenerated automatically on every Vercel deploy. `npm run dev` renders the `/resume` and `/resume-extended` **pages** live from source (iterate on layout/content there with HMR), but does **not** serve the generated `/resume.pdf` — that binary only exists in `out/`. To verify the deployed artifacts (clean URLs, the PDFs, the Hero download link), run `npm run preview`.
