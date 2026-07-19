@@ -20,7 +20,7 @@ Supporting commands:
 - `npm run lint` — ESLint
 - `npm run typecheck` — TypeScript type-check (`tsc --noEmit`)
 - `npm run format` / `npm run format:check` — Biome (write in place / verify; CI uses the check)
-- `npm run test:smoke` — serve `out/` and assert `/`, `/resume`, `/resume-extended` each return HTTP 200 with the expected `<title>` (run `npm run build` first)
+- `npm run test:smoke` — serve `out/` and assert the HTML routes return 200 with their expected `<title>`, the resume PDFs serve as `application/pdf`, `/resume.html` redirects to `/resume`, and unknown routes 404 (run `npm run build:resume` first)
 
 ## Architecture
 
@@ -48,7 +48,7 @@ The husky `pre-commit` hook runs `lint-staged`, which applies `eslint --fix` the
 `.github/workflows/ci.yml` runs on pushes to `main` and PRs, as two parallel jobs:
 
 - **Lint, types & format** — `npm run lint`, `npm run typecheck`, `npm run format:check`. The type and format steps use `if: ${{ !cancelled() }}` so every check reports even after an earlier one fails.
-- **Build & smoke test** — `npm run build` (static export), then `npm run test:smoke`, which serves `out/` and asserts `/`, `/resume`, and `/resume-extended` each return 200 with the expected `<title>`.
+- **Build & smoke test** — `npm run build:resume` (static export + PDF generation, using the runner's Chrome), then `npm run test:smoke`, which serves `out/` and asserts the HTML routes, the generated PDFs, the `/resume.html` → `/resume` redirect, and 404 handling.
 
 Actions are pinned to major tags (`actions/checkout@v7`, `actions/setup-node@v6`); `.github/dependabot.yml` keeps them current via grouped weekly updates of the `github-actions` ecosystem.
 

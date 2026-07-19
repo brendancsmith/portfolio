@@ -49,7 +49,10 @@ async function resolveLaunchOptions() {
       `Chrome not found at ${executablePath}. Set CHROME_PATH to your Chrome/Chromium binary.`,
     );
   }
-  return { args: [], executablePath, headless: true };
+  // CHROME_ARGS passes extra launch flags where the environment needs them
+  // (e.g. CHROME_ARGS=--no-sandbox in rootful containers and CI).
+  const args = (process.env.CHROME_ARGS ?? "").split(/\s+/).filter(Boolean);
+  return { args, executablePath, headless: true };
 }
 
 async function main() {

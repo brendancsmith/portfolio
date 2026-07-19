@@ -26,9 +26,11 @@ import serveHandler from "serve-handler";
 export async function startStaticServer(dir, { port = 0, cleanUrls = true } = {}) {
   const server = createServer((req, res) => serveHandler(req, res, { public: dir, cleanUrls }));
   server.listen(port, "127.0.0.1");
+  // once() rejects if the server emits "error" instead (e.g. port already in use).
   await once(server, "listening");
   const origin = `http://127.0.0.1:${server.address().port}`;
-  const close = () => new Promise((closed) => server.close(closed));
+  const close = () =>
+    new Promise((resolved, rejected) => server.close((err) => (err ? rejected(err) : resolved())));
   return { origin, close };
 }
 
