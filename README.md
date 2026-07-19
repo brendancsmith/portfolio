@@ -36,8 +36,10 @@ npm run build:resume
 This builds the site, serves it through `scripts/static-server.mjs`, and uses
 headless Chrome to render those routes into `out/resume.pdf` and
 `out/resume-extended.pdf`. The PDFs are build artifacts (not committed); Vercel
-regenerates them on every deploy via the `buildCommand` in `vercel.json`. To
-preview them locally, run `npm run preview`.
+regenerates them on every deploy via the `buildCommand` in `vercel.json` and
+deploys the raw `out/` directory (`framework: null`, `outputDirectory`,
+`cleanUrls`), so post-build artifacts like the PDFs actually ship. To preview
+them locally, run `npm run preview`.
 
 ## Architecture
 
