@@ -57,8 +57,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build (static export)
-        run: npm run build
+      - name: Build (static export + resume PDFs)
+        # The runner image ships Google Chrome; the PDF generator picks it up
+        # via CHROME_PATH. --no-sandbox: the ephemeral runner renders only our
+        # own freshly built pages.
+        run: CHROME_PATH="${CHROME_BIN:-/usr/bin/google-chrome}" CHROME_ARGS=--no-sandbox npm run build:resume
 
-      - name: Smoke test (serve + assert routes)
+      - name: Smoke test (serve + assert routes, PDFs, clean URLs)
         run: npm run test:smoke

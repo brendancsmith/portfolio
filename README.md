@@ -6,11 +6,24 @@ Built with Next.js 16, React 19, TypeScript, and Tailwind CSS 4. Statically expo
 
 ## Development
 
+Two commands cover almost everything:
+
 ```bash
-npm run dev        # Start dev server (localhost:3000)
-npm run build      # Static export to out/
-npm run lint       # ESLint
+npm run dev        # everyday iteration — live-reloading site at localhost:3000
+npm run preview    # see exactly what Vercel ships — build + PDFs, served at localhost:3000
 ```
+
+Use **`npm run dev`** while working: it live-reloads every page, including the
+resume pages at `/resume` and `/resume-extended`. It does **not** serve the
+downloadable PDF or use clean URLs — those exist only in a build.
+
+When you want to check the real thing — clean URLs, the generated PDFs, and the
+Hero's `/resume.pdf` download link — run **`npm run preview`**. It builds the
+static export, generates the PDFs, and serves `out/` at localhost:3000 exactly as
+Vercel does.
+
+Other commands: `npm run build` (static export), `npm run lint`,
+`npm run typecheck`, `npm run format`.
 
 ## Resume PDF Generation
 
@@ -20,7 +33,13 @@ The site includes print-optimized resume pages (`/resume` and `/resume-extended`
 npm run build:resume
 ```
 
-This builds the site, starts a temporary server, and uses Chrome headless to generate `public/resume.pdf` and `public/resume-extended.pdf`.
+This builds the site, serves it through `scripts/static-server.mjs`, and uses
+headless Chrome to render those routes into `out/resume.pdf` and
+`out/resume-extended.pdf`. The PDFs are build artifacts (not committed); Vercel
+regenerates them on every deploy via the `buildCommand` in `vercel.json` and
+deploys the raw `out/` directory (`framework: null`, `outputDirectory`,
+`cleanUrls`), so post-build artifacts like the PDFs actually ship. To preview
+them locally, run `npm run preview`.
 
 ## Architecture
 

@@ -180,15 +180,19 @@ body > nav { display: none !important; }
 
 .resume-contact {
   display: flex;
-  gap: 12pt;
+  flex-wrap: wrap;
+  gap: 3pt 12pt;
   font-size: 8.5pt;
   color: #475569;
 }
 
+/* Wrap between items, never inside one — otherwise the row overflows the
+   61% column and hyphenated items (phone, handles) break mid-value. */
 .resume-contact span {
   display: flex;
   align-items: center;
   gap: 4pt;
+  white-space: nowrap;
 }
 
 .resume-contact svg {
@@ -204,7 +208,11 @@ body > nav { display: none !important; }
 }
 
 .resume-left {
-  flex: 0 0 61%;
+  /* 5.3in matches the column split the resume has always rendered with: the
+     declared 61% was silently overridden by the old non-wrapping contact row's
+     min-content width. Keep that geometry explicit so body-text line breaks
+     stay identical to the previously published PDFs. */
+  flex: 0 0 5.3in;
   background: #fff;
 }
 
