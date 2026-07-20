@@ -108,7 +108,7 @@ export const experience: ExperienceEntry[] = [
     ],
     resumeBullets: [
       "Owned and operated two critical services: one to drain customer instances from unhealthy EC2 hosts, and another to proactively recycle older hosts for re-provisioning. Identified and resolved deadlock conditions, resulting in a $300k/month reduction in 'unsellable' rate.",
-      "Built a scalable and secure data lake to centralize previously siloed EC2 internal data",
+      "Built a scalable and secure data lake to centralize previously siloed EC2 internal data.",
       "Used PySpark to ingest real-time data from various AWS data stores such as AWS DynamoDB, RDS (MySQL), S3, and Amazon Athena.",
       "Deployed ETL pipelines using AWS Glue Jobs, Crawlers, and VPC Elastic Interfaces to extract cross-regional data from 300+ internal AWS production service accounts.",
       "Created stored procedures and QuickSight analytics dashboards, significantly increasing the velocity of insights and business decisions for the TPM team and stakeholders.",
@@ -132,7 +132,7 @@ export const experience: ExperienceEntry[] = [
     resumeBullets: [
       "Responsible for identifying and root cause analysis (RCA) of regressions in Apache Hadoop ecosystem products (Spark, Kafka, etc.) and liaising with Apache engineers.",
       "Proposed, designed, and implemented time series anomaly detection algorithms, improving alarm triggers and identifying cluster configurations with high customer impact. Implemented this work and reduced average TTD by ~55% and TTR by ~20%.",
-      "Joined a small v-team which refactored the control plane of HDInsight to support the creation of flexible cluster shapes. Our work closed the feature gap with our primary competitors in addition to increasing our service reliability KPI’s and decreasing COGS.",
+      "Joined a small v-team which refactored the control plane of HDInsight to support the creation of flexible cluster shapes. Our work closed the feature gap with our primary competitors in addition to increasing our service reliability KPIs and decreasing COGS.",
     ],
   },
   {
