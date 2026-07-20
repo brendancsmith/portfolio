@@ -4,6 +4,7 @@ export interface EducationEntry {
   dates: string;
   gpa: string;
   highlights: string[];
+  resumeHighlights?: string[];
 }
 
 export const education: EducationEntry[] = [
@@ -13,6 +14,10 @@ export const education: EducationEntry[] = [
     dates: "01/2022 – 12/2024",
     gpa: "3.89 / 4.00",
     highlights: [
+      "Created DNNs using PyTorch for the vision system of a racing simulator. Implemented networks for object detection, keypoint estimation, semantic segmentation, multi-action networks, and reinforcement learning for autonomous driving.",
+      "Created neural networks for Natural Language Processing (NLP) applications such as Semantic Parsing & Labelling, Sentiment Analysis, and Language Generation.",
+    ],
+    resumeHighlights: [
       "Created DNNs using PyTorch for the vision system of a racing simulator. Implemented networks for object detection, keypoint estimation, semantic segmentation, multi-action networks, and reinforcement learning for autonomous driving.",
       "Created neural networks for Natural Language Processing (NLP) applications such as Semantic Parsing & Labelling, Sentiment Analysis, and Language Generation.",
     ],
@@ -27,5 +32,6 @@ export const education: EducationEntry[] = [
       "Minor in Business Management and Mathematics.",
       "Capstone project involved working with local businesses to implement software solutions.",
     ],
+    resumeHighlights: [],
   },
 ];
