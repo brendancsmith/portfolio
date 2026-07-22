@@ -6,6 +6,8 @@ export interface ExperienceEntry {
   description?: string;
   bullets: string[];
   resumeBullets?: string[];
+  resumeRole?: string;
+  resumeCompany?: string;
 }
 
 export const experience: ExperienceEntry[] = [
@@ -26,7 +28,7 @@ export const experience: ExperienceEntry[] = [
     ],
     resumeBullets: [
       "Created a next-gen customer expansion XGBoost model for the Flexible Rent Platform including alternative data, increasing Gini coefficient by 23%.",
-      "Designed and implemented Metaflow flows (DAGs) to automatically train challenger models for our primary credit risk and underwriting XGBoost model.",
+      "Designed and implemented a series of Metaflow flows (DAGs) to automatically train challenger models for our primary credit risk / underwriting XGBoost model.",
       "Trained a team of 3 other Data Scientists to contribute flows to the project.",
       "Worked on a RAG-based chat system to generate answers based on our internal documentation. Also integrated with Snowflake to run SQL queries based on questions.",
     ],
@@ -34,6 +36,7 @@ export const experience: ExperienceEntry[] = [
   {
     company: "Burns & McDonnell",
     role: "Senior Data Engineer – Contract",
+    resumeRole: "Senior Data Engineer - Contract",
     location: "Kansas City, MO",
     dates: "04/2024 – 07/2024",
     description:
@@ -43,10 +46,16 @@ export const experience: ExperienceEntry[] = [
       "Transformed records between medallion stages using dbt within the Databricks Medallion Architecture.",
       "Designed a logging strategy integrated with Azure Monitor / Log Analytics.",
     ],
+    resumeBullets: [
+      "Created Airflow DAGs to ingest full-load and incremental data from various SQL databases.",
+      "Utilized dbt to transform records between stages in the Databricks Medallion Architecture.",
+      "Developed a logging strategy and integration with Azure Monitor / Log Analytics.",
+    ],
   },
   {
     company: "University of Texas at Austin",
     role: "Graduate Learning Facilitator – Machine Learning",
+    resumeRole: "Graduate Learning Facilitator - Machine Learning",
     location: "Remote",
     dates: "01/2024 – 04/2024",
     description:
@@ -66,6 +75,10 @@ export const experience: ExperienceEntry[] = [
       "Augmented enterprise knowledge graphs with internal data to cold-start a B2B recommendation system, solving the new-platform data sparsity problem for market insights.",
       "Identified patterns in sales gaps by analyzing client and sales history data. Presented actionable insights to clients, securing 5 initial contracts at launch.",
     ],
+    resumeBullets: [
+      "Augmented enterprise knowledge graphs with internal data to facilitate cold-starting a B2B recommendation system and provide market insights for business development.",
+      "Identified patterns in sales gaps by analyzing client and sales history data. Presented actionable insights to clients, securing 5 initial contracts for product launch.",
+    ],
   },
   {
     company: "Nexus Equities",
@@ -81,6 +94,8 @@ export const experience: ExperienceEntry[] = [
   {
     company: "Amazon Web Services (AWS)",
     role: "Software Development Engineer – EC2 Core Platform",
+    resumeRole: "Software Development Engineer",
+    resumeCompany: "Amazon Web Services (AWS) - EC2 Core Platform",
     location: "Seattle, WA",
     dates: "10/2018 – 01/2021",
     description:
@@ -93,16 +108,18 @@ export const experience: ExperienceEntry[] = [
     ],
     resumeBullets: [
       "Owned and operated two critical services: one to drain customer instances from unhealthy EC2 hosts, and another to proactively recycle older hosts for re-provisioning. Identified and resolved deadlock conditions, resulting in a $300k/month reduction in 'unsellable' rate.",
-      "Built a scalable data lake to centralize previously siloed EC2 internal data sources.",
+      "Built a scalable and secure data lake to centralize previously siloed EC2 internal data",
       "Used PySpark to ingest real-time data from various AWS data stores such as AWS DynamoDB, RDS (MySQL), S3, and Amazon Athena.",
       "Deployed ETL pipelines using AWS Glue Jobs, Crawlers, and VPC Elastic Interfaces to extract cross-regional data from 300+ internal AWS production service accounts.",
-      "Created stored procedures and QuickSight dashboards, increasing the velocity of insights and business decisions for TPM stakeholders.",
-      "Implemented a capacity forecasting model and integrated it into the proactive re-provisioning workflow, increasing host turnover rate by up to 18% per region.",
+      "Created stored procedures and QuickSight analytics dashboards, significantly increasing the velocity of insights and business decisions for the TPM team and stakeholders.",
+      "Implemented a repaired capacity forecasting model and integrated it into the proactive re-provisioning workflow, increasing host turnover rate by up to 18% per region.",
     ],
   },
   {
     company: "Microsoft Azure",
     role: "Software Development Engineer – HDInsight",
+    resumeRole: "Software Development Engineer",
+    resumeCompany: "Microsoft Azure - HDInsight",
     location: "Redmond, WA",
     dates: "08/2016 – 10/2018",
     description:
@@ -112,10 +129,17 @@ export const experience: ExperienceEntry[] = [
       "Proposed, designed, and deployed time series anomaly detection ML models on Azure, improving alarm triggers and identifying cluster configurations with high customer impact. Reduced average TTD by ~55% and TTR by ~20%.",
       "Joined a small v-team to refactor the HDInsight control plane, enabling flexible cluster shapes. Closed the feature gap with competitors while increasing service reliability KPIs and reducing COGS.",
     ],
+    resumeBullets: [
+      "Responsible for identifying and root cause analysis (RCA) of regressions in Apache Hadoop ecosystem products (Spark, Kafka, etc.) and liaising with Apache engineers.",
+      "Proposed, designed, and implemented time series anomaly detection algorithms, improving alarm triggers and identifying cluster configurations with high customer impact. Implemented this work and reduced average TTD by ~55% and TTR by ~20%.",
+      "Joined a small v-team which refactored the control plane of HDInsight to support the creation of flexible cluster shapes. Our work closed the feature gap with our primary competitors in addition to increasing our service reliability KPI’s and decreasing COGS.",
+    ],
   },
   {
     company: "Hudl",
     role: "Design Studio Software Developer – Decision Science",
+    resumeRole: "Design Studio Software Developer",
+    resumeCompany: "Hudl - Decision Science",
     location: "Lincoln, NE",
     dates: "09/2015 – 05/2016",
     description:
