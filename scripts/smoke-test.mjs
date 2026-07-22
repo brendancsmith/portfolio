@@ -17,12 +17,13 @@ const routes = [
   { path: "/", title: "Brendan C. Smith | Lead Data Scientist" },
   { path: "/resume", title: "Brendan C. Smith | Resume" },
   { path: "/resume-extended", title: "Brendan C. Smith | Resume (Extended)" },
+  { path: "/resume-ats", title: "Brendan C. Smith | Resume (ATS)" },
 ];
 
 // The downloadable PDFs are generated at build time — assert they shipped and
 // contain PDF data, so CI catches broken generation instead of relying on
 // manual verification.
-const pdfs = ["/resume.pdf", "/resume-extended.pdf"];
+const pdfs = ["/resume.pdf", "/resume-extended.pdf", "/resume-ats.pdf"];
 
 for (const [file, buildCommand] of [
   ["index.html", "npm run build"],
