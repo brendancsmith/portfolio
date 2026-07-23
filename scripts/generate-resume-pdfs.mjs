@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 // Generate the resume PDFs from the exported static site.
 //
-// Serves the static export, renders the print-styled /resume and
-// /resume-extended routes with headless Chromium, and writes resume.pdf and
-// resume-extended.pdf into the target directory (default: out/).
+// Serves the static export, renders the print-styled /resume, /resume-extended,
+// and /resume-ats routes with headless Chromium, and writes resume.pdf,
+// resume-extended.pdf, and resume-ats.pdf into the target directory
+// (default: out/). Each route's own @page CSS rule controls the PDF page size
+// (preferCSSPageSize), and multi-page output is allowed.
 //
 // One code path, two environments:
 //   • Vercel build (Linux, no system Chrome) → bundled @sparticuz/chromium
@@ -22,6 +24,7 @@ import { startStaticServer } from "./static-server.mjs";
 const PAGES = [
   { route: "/resume.html", file: "resume.pdf" },
   { route: "/resume-extended.html", file: "resume-extended.pdf" },
+  { route: "/resume-ats.html", file: "resume-ats.pdf" },
 ];
 
 const DEFAULT_LOCAL_CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";

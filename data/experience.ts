@@ -6,6 +6,8 @@ export interface ExperienceEntry {
   description?: string;
   bullets: string[];
   resumeBullets?: string[];
+  resumeRole?: string;
+  resumeCompany?: string;
 }
 
 export const experience: ExperienceEntry[] = [
@@ -34,6 +36,7 @@ export const experience: ExperienceEntry[] = [
   {
     company: "Burns & McDonnell",
     role: "Senior Data Engineer – Contract",
+    resumeRole: "Senior Data Engineer - Contract",
     location: "Kansas City, MO",
     dates: "04/2024 – 07/2024",
     description:
@@ -47,6 +50,7 @@ export const experience: ExperienceEntry[] = [
   {
     company: "University of Texas at Austin",
     role: "Graduate Learning Facilitator – Machine Learning",
+    resumeRole: "Graduate Learning Facilitator - Machine Learning",
     location: "Remote",
     dates: "01/2024 – 04/2024",
     description:
@@ -81,6 +85,8 @@ export const experience: ExperienceEntry[] = [
   {
     company: "Amazon Web Services (AWS)",
     role: "Software Development Engineer – EC2 Core Platform",
+    resumeRole: "Software Development Engineer",
+    resumeCompany: "Amazon Web Services (AWS) - EC2 Core Platform",
     location: "Seattle, WA",
     dates: "10/2018 – 01/2021",
     description:
@@ -103,6 +109,8 @@ export const experience: ExperienceEntry[] = [
   {
     company: "Microsoft Azure",
     role: "Software Development Engineer – HDInsight",
+    resumeRole: "Software Development Engineer",
+    resumeCompany: "Microsoft Azure - HDInsight",
     location: "Redmond, WA",
     dates: "08/2016 – 10/2018",
     description:
@@ -116,6 +124,8 @@ export const experience: ExperienceEntry[] = [
   {
     company: "Hudl",
     role: "Design Studio Software Developer – Decision Science",
+    resumeRole: "Design Studio Software Developer",
+    resumeCompany: "Hudl - Decision Science",
     location: "Lincoln, NE",
     dates: "09/2015 – 05/2016",
     description:

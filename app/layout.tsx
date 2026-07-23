@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Rubik } from "next/font/google";
 import { personal } from "@/data/personal";
 import Navbar from "@/components/nav/Navbar";
 import "./globals.css";
@@ -7,6 +7,14 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+});
+
+// Used only by the resume pages (name/headings); the rest of the site stays on Inter.
+const rubik = Rubik({
+  variable: "--font-rubik",
+  subsets: ["latin"],
+  preload: false,
+  weight: ["400", "500", "600", "700"],
 });
 
 const description =
@@ -57,7 +65,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body
-        className={`${inter.variable} font-sans antialiased bg-white text-slate-700 dark:bg-slate-950 dark:text-slate-200`}
+        className={`${inter.variable} ${rubik.variable} font-sans antialiased bg-white text-slate-700 dark:bg-slate-950 dark:text-slate-200`}
       >
         <script
           type="application/ld+json"

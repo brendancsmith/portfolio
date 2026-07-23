@@ -17,12 +17,23 @@ const routes = [
   { path: "/", title: "Brendan C. Smith | Lead Data Scientist" },
   { path: "/resume", title: "Brendan C. Smith | Resume" },
   { path: "/resume-extended", title: "Brendan C. Smith | Resume (Extended)" },
+  { path: "/resume-ats", title: "Brendan C. Smith | Resume (ATS)" },
 ];
 
 // The downloadable PDFs are generated at build time — assert they shipped and
 // contain PDF data, so CI catches broken generation instead of relying on
-// manual verification.
-const pdfs = ["/resume.pdf", "/resume-extended.pdf"];
+// manual verification. Each entry also pins the layout contract this project
+// guarantees: US Letter sizing plus the page count the variant is designed for
+// (standard fits one page; extended and ATS paginate to two).
+const pdfs = [
+  { path: "/resume.pdf", pages: 1 },
+  { path: "/resume-extended.pdf", pages: 2 },
+  { path: "/resume-ats.pdf", pages: 2 },
+];
+
+// US Letter media box in PDF points (8.5" × 11" at 72 dpi). preferCSSPageSize
+// maps each route's @page size onto this box.
+const LETTER_MEDIA_BOX = /\/MediaBox\s*\[\s*0\s+0\s+612\s+792\s*\]/;
 
 for (const [file, buildCommand] of [
   ["index.html", "npm run build"],
@@ -73,7 +84,7 @@ try {
     });
   }
 
-  for (const path of pdfs) {
+  for (const { path, pages } of pdfs) {
     await check(path, async (res) => {
       if (res.status !== 200) return `HTTP ${res.status} (expected 200)`;
       const type = res.headers.get("content-type") ?? "";
@@ -84,7 +95,17 @@ try {
       if (String.fromCharCode(...bytes.slice(0, 5)) !== "%PDF-") {
         return "200 but body does not start with %PDF-";
       }
-      console.log(`✓ ${path} → 200, application/pdf (${bytes.length} bytes)`);
+      const pdf = Buffer.from(bytes).toString("latin1");
+      if (!LETTER_MEDIA_BOX.test(pdf)) {
+        return "200 but media box is not US Letter (expected [0 0 612 792])";
+      }
+      const pageCount = (pdf.match(/\/Type\s*\/Page\b/g) ?? []).length;
+      if (pageCount !== pages) {
+        return `200 but has ${pageCount} page(s) (expected ${pages})`;
+      }
+      console.log(
+        `✓ ${path} → 200, application/pdf, US Letter, ${pageCount} page(s) (${bytes.length} bytes)`,
+      );
       return null;
     });
   }
