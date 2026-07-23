@@ -2,13 +2,11 @@ import { experience } from "@/data/experience";
 import { education } from "@/data/education";
 import { resumeSkills } from "@/data/skills";
 import { personal } from "@/data/personal";
+import { formatDates } from "./utils";
 
 interface ResumeLayoutProps {
   variant: "standard" | "extended";
 }
-
-/** Display date ranges with a hyphen separator ("09/2024 - 10/2025"); data uses an en dash. */
-const formatDates = (dates: string) => dates.replace(/–/g, "-");
 
 /** "3.89 / 4.00" -> GPA | <b>3.89</b> / 4.00, matching the target's bold-value treatment. */
 function GpaLine({ gpa }: { gpa: string }) {
