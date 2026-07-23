@@ -13,6 +13,7 @@ const inter = Inter({
 const rubik = Rubik({
   variable: "--font-rubik",
   subsets: ["latin"],
+  preload: false,
   weight: ["400", "500", "600", "700"],
 });
 

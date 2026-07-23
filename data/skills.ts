@@ -95,7 +95,7 @@ export const resumeSkills: SkillCategory[] = [
       "SQL",
       "PySpark",
       "Java",
-      "Javascript / Typescript",
+      "JavaScript / TypeScript",
       "C#",
       "PyTorch",
       "NumPy",
